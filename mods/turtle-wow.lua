@@ -66,9 +66,10 @@ module.enable = function(self)
   end
 
   -- update debuff durations
-  L["debuffs"]["Hand of Reckoning"] = {[0]=3.0}
-  L["debuffs"]['Insect Swarm'] = {[0]=18.0}
-  L["debuffs"]['Moonfire'] = {[1]=9.0,[2]=18.0,[3]=18.0,[4]=18.0,[5]=18.0,[6]=18.0,[7]=18.0,[8]=18.0,[9]=18.0,[10]=18.0,[0]=18.0}
+  -- 兼容中文 xhwsd@qq.com 2024-12-7
+  L["debuffs"][GetLocale() == "zhCN" and "清算之手" or "Hand of Reckoning"] = {[0]=3.0}
+  L["debuffs"][GetLocale() == "zhCN" and "虫群" or "Insect Swarm"] = {[0]=18.0}
+  L["debuffs"][GetLocale() == "zhCN" and "月火术" or "Moonfire"] = {[1]=9.0,[2]=18.0,[3]=18.0,[4]=18.0,[5]=18.0,[6]=18.0,[7]=18.0,[8]=18.0,[9]=18.0,[10]=18.0,[0]=18.0}
 end
 
 -- Turtle WoW specific libdebuff patches
