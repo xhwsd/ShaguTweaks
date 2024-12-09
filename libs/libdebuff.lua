@@ -182,7 +182,8 @@ libdebuff:SetScript("OnEvent", function()
 
   -- Add Missing Buffs by Iteration
   elseif ( event == "UNIT_AURA" and arg1 == "target" ) or event == "PLAYER_TARGET_CHANGED" then
-    for i=1, 16 do
+    -- 将debuff修改为64位 xhwsd@qq.com 2024-12-9
+    for i=1, 64 do
       local effect, rank, texture, stacks, dtype, duration, timeleft = libdebuff:UnitDebuff("target", i)
 
       -- abort when no further debuff was found
